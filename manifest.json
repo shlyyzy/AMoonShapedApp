@@ -1,1 +1,1 @@
-{    "name": "A Moon Shaped App",    "version": "1.0",    "description": "Chrome extension acting as a sleep or reminder timer",    "manifest_version": 2}
+{    "name": "A Moon Shaped App",    "version": "1.0",    "description": "Chrome extension acting as a sleep/reminder timer",    "manifest_version": 2}
