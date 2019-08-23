@@ -2,6 +2,10 @@
 //get user's preferred sleep time by input (in min)
 // chrome doesn't allow in-text javascript documentation.
 
+chrome.alarms.onAlarm.addListener(function(alarm){
+  console.log("time's up!");
+});
+
 function sleepTimer(){
   var timer = prompt("Time in minutes until bedtime (default is 30 minutes):", [30]);
 
@@ -9,8 +13,9 @@ function sleepTimer(){
   var date = Date.now();
 
   var sleepTime = date + timer; // milliseconds from epoch
-  var newDate = new Date(sleepTime);
-  return newDate;
+  return sleepTime;
+  // var newDate = new Date(sleepTime);
+  // return newDate;
 }
 // normal JS way
 // document.addEventListener('DOMContentLoaded', function() {
@@ -23,6 +28,8 @@ function sleepTimer(){
 // this is the jquery way of writing this:
 $(document).ready(function() {
   $('#timerButton').click(function(){
-    console.log(sleepTimer().getDate());
+    var time = sleepTimer();
+    console.log(time);
+    chrome.alarms.create('sleepAlarm', {when: time});
   });
 });

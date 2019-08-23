@@ -17,5 +17,5 @@
   "background": {
     "scripts":["background.js"]
   },
-  "permissions": ["storage", "alarms"]
+  "permissions": ["storage", "alarms", "notifications"]
 }
