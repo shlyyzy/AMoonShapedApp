@@ -22,6 +22,12 @@ function showNotification(){
 
 // show notification once alarm goes off
 chrome.alarms.onAlarm.addListener(function(alarm){
-  showNotification();
+  var opt = {
+        type: 'basic',
+        iconUrl: chrome.extension.getURL('/moon.png'),
+        title: 'Go to sleep!',
+        message: "Sleep is important! Go to sleep now.",
+  };
+  chrome.notifications.create('reminder', opt);
   alert("go to sleep!!");
 });
