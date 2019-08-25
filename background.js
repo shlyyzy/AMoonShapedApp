@@ -1,5 +1,5 @@
 'use strict';
-
+var dbName = 'sleepTimeInfo';
 
 chrome.browserAction.onClicked.addListener(function(tab) {
   // Send a message to the active tab
