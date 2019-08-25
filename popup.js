@@ -14,15 +14,8 @@ function sleepTimer(){
   // return newDate;
 }
 
-// displaying notification
-function showNotification(){
-  chrome.notifications.create('reminder', {
-        type: 'basic',
-        iconUrl: 'moon.png',
-        title: 'Go to sleep!',
-        message: "Sleep is important! Go to sleep now."
-     });
-}
+
+
 
 // normal JS way
 // document.addEventListener('DOMContentLoaded', function() {
@@ -54,13 +47,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('#getTimer').click(function() {
     chrome.alarms.getAll(function(alarms) {
-      console.log(alarms);
       console.log(alarms[0]);
     });
   });
-});
-
-// show notification once alarm goes off
-chrome.alarms.onAlarm.addListener(function(alarm){
-  showNotification();
 });
